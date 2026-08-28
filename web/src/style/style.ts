@@ -73,37 +73,37 @@ const style: StyleSpecification = {
     },
     power: {
       type: 'vector',
-      tiles: ['https://openinframap.org/map/power/{z}/{x}/{y}.pbf'],
+      tiles: ['http://localhost:8080/maps/power/{z}/{x}/{y}.pbf'],
       maxzoom: 17,
       attribution: oim_attribution
     },
     petroleum: {
       type: 'vector',
-      tiles: ['https://openinframap.org/map/petroleum/{z}/{x}/{y}.pbf'],
+      tiles: ['http://localhost:8080/maps/petroleum/{z}/{x}/{y}.pbf'],
       maxzoom: 17,
       attribution: oim_attribution
     },
     telecoms: {
       type: 'vector',
-      tiles: ['https://openinframap.org/map/telecoms/{z}/{x}/{y}.pbf'],
+      tiles: ['http://localhost:8080/maps/telecoms/{z}/{x}/{y}.pbf'],
       maxzoom: 17,
       attribution: oim_attribution
     },
     water: {
       type: 'vector',
-      tiles: ['https://openinframap.org/map/water/{z}/{x}/{y}.pbf'],
+      tiles: ['http://localhost:8080/maps/water/{z}/{x}/{y}.pbf'],
       maxzoom: 17,
       attribution: oim_attribution
     },
     solar_heatmap: {
       type: 'vector',
-      tiles: ['https://openinframap.org/map/solar_heatmap/{z}/{x}/{y}.pbf'],
+      tiles: ['http://localhost:8080/maps/solar_heatmap/{z}/{x}/{y}.pbf'],
       maxzoom: 17,
       attribution: oim_attribution
     },
     other_pipeline: {
       type: 'vector',
-      tiles: ['https://openinframap.org/map/other_pipeline/{z}/{x}/{y}.pbf'],
+      tiles: ['http://localhost:8080/maps/other_pipeline/{z}/{x}/{y}.pbf'],
       maxzoom: 17,
       attribution: oim_attribution
     },
