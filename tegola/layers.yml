@@ -202,7 +202,7 @@ layers:
 
   - name: power_portal_way
     map:
-      - all
+      - openinframap
       - power
     geometry_type: LineString
     min_zoom: 14
@@ -213,7 +213,6 @@ layers:
 
   - name: power_substation
     map:
-      - all
       - openinframap
       - power
     geometry_type: Polygon
@@ -232,7 +231,6 @@ layers:
 
   - name: power_substation_point
     map:
-      - all
       - openinframap
       - power
     geometry_type: Point
@@ -252,7 +250,6 @@ layers:
 
   - name: power_plant
     map:
-      - all
       - openinframap
       - power
     geometry_type: Polygon
@@ -276,7 +273,6 @@ layers:
 
   - name: power_plant_point
     map:
-      - all
       - openinframap
       - power
     geometry_type: Point
@@ -302,7 +298,6 @@ layers:
 
   - name: power_generator
     map:
-      - all
       - openinframap
       - power
     geometry_type: Point
@@ -316,7 +311,6 @@ layers:
 
   - name: power_generator_area
     map:
-      - all
       - openinframap
       - power
     geometry_type: Polygon
@@ -332,7 +326,6 @@ layers:
 
   - name: power_transformer
     map:
-      - all
       - openinframap
       - power
     geometry_type: Point
@@ -344,7 +337,6 @@ layers:
 
   - name: power_compensator
     map:
-      - all
       - openinframap
       - power
     geometry_type: Point
@@ -365,7 +357,6 @@ layers:
 
   - name: power_switch
     map:
-      - all
       - openinframap
       - power
     geometry_type: Point
@@ -386,7 +377,7 @@ layers:
 
   - name: power_heatmap_solar
     map:
-      - all
+      - openinframap
       - solar_heatmap
     geometry_type: Point
     id_field: mvt_id_field
@@ -399,7 +390,6 @@ layers:
 
   - name: telecoms_communication_line
     map:
-      - all
       - openinframap
       - telecoms
     geometry_type: LineString
@@ -416,7 +406,6 @@ layers:
 
   - name: telecoms_data_center
     map:
-      - all
       - openinframap
       - telecoms
     geometry_type: Polygon
@@ -430,7 +419,7 @@ layers:
 
   - name: telecoms_data_center_point
     map:
-      - all
+      - openinframap
       - telecoms
     geometry_type: Point
     min_zoom: 5
@@ -443,7 +432,6 @@ layers:
 
   - name: telecoms_mast
     map:
-      - all
       - openinframap
       - telecoms
     geometry_type: Point
@@ -461,7 +449,7 @@ layers:
 
   - name: telecoms_antenna
     map:
-      - all
+      - openinframap
       - telecoms
     geometry_type: Point
     min_zoom: 10
@@ -472,7 +460,7 @@ layers:
 
   - name: telecoms_cabinet
     map:
-      - all
+      - openinframap
       - telecoms
     geometry_type: Point
     min_zoom: 10
@@ -483,7 +471,6 @@ layers:
 
   - name: petroleum_pipeline
     map:
-      - all
       - openinframap
       - petroleum
     geometry_type: LineString
@@ -514,7 +501,7 @@ layers:
 
   - name: other_pipeline
     map:
-      - all
+      - openinframap
       - other_pipeline
     geometry_type: LineString
     min_zoom: 2
@@ -542,7 +529,6 @@ layers:
 
   - name: petroleum_well
     map:
-      - all
       - openinframap
       - petroleum
     geometry_type: Point
@@ -554,7 +540,6 @@ layers:
 
   - name: petroleum_site
     map:
-      - all
       - openinframap
       - petroleum
     geometry_type: Polygon
@@ -566,7 +551,6 @@ layers:
 
   - name: water_pipeline
     map:
-      - all
       - openinframap
       - water
     geometry_type: LineString
@@ -592,7 +576,7 @@ layers:
 
   - name: pressurised_waterway
     map:
-      - all
+      - openinframap
       - water
     geometry_type: LineString
     min_zoom: 3
@@ -603,7 +587,7 @@ layers:
 
   - name: water_treatment_plant_polygon
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Polygon
     min_zoom: 10
@@ -614,7 +598,7 @@ layers:
 
   - name: water_treatment_plant_point
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Point
     min_zoom: 6
@@ -625,7 +609,7 @@ layers:
 
   - name: wastewater_plant_polygon
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Polygon
     min_zoom: 10
@@ -636,7 +620,7 @@ layers:
 
   - name: wastewater_plant_point
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Point
     min_zoom: 6
@@ -647,7 +631,7 @@ layers:
 
   - name: water_reservoir
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Polygon
     min_zoom: 4
@@ -660,7 +644,7 @@ layers:
 
   - name: water_reservoir_point
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Point
     min_zoom: 4
@@ -673,7 +657,7 @@ layers:
 
   - name: water_tower
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Point
     min_zoom: 8
@@ -684,7 +668,7 @@ layers:
 
   - name: water_well
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Point
     min_zoom: 8
@@ -695,7 +679,7 @@ layers:
 
   - name: pumping_station_polygon
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Polygon
     min_zoom: 10
@@ -708,7 +692,7 @@ layers:
 
   - name: pumping_station_point
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Point
     min_zoom: 6
@@ -721,7 +705,7 @@ layers:
 
   - name: water_cabinet
     map:
-      - all
+      - openinframap
       - water
     geometry_type: Point
     min_zoom: 10

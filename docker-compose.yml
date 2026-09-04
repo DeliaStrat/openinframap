@@ -42,12 +42,13 @@ services:
       - /mapping.json
       - -connection
       - "postgis://osm:osm@db/osm"
+    depends_on:
+      db:
+        condition: service_healthy
 
   tegola:
     build: tegola
     user: "${UID:-1000}:${GID:-1000}"
-    volumes:
-      - ./data/tegola:/tmp/tegola
     environment:
       DB_URI: "postgres://osm:osm@db:5432/osm"
     ports:
