@@ -1,8 +1,10 @@
-\c osm osm
+\c osm postgres
 
 CREATE EXTENSION IF NOT EXISTS postgis;
 CREATE EXTENSION IF NOT EXISTS intarray;
 CREATE EXTENSION IF NOT EXISTS hstore;
+
+\c osm osm
 
 -- Drop all views here so that imposm3 can swap tables around
 DROP VIEW IF EXISTS substation;
@@ -36,14 +38,20 @@ BEGIN
 END
 $$ LANGUAGE plpgsql;
 
--- Select the highest voltage from a semicolon-delimited list
-CREATE OR REPLACE FUNCTION convert_voltage(value TEXT) RETURNS NUMERIC
+-- Convert a text integer value into an integer.
+-- Only supports 9-decimal-digit positive integers
+CREATE OR REPLACE FUNCTION convert_integer(value TEXT) RETURNS INTEGER
 IMMUTABLE
 PARALLEL SAFE
 RETURNS NULL ON NULL INPUT
 AS $$
-  SELECT value FROM convert_integer_list(value) ORDER BY value DESC LIMIT 1;
-$$ LANGUAGE SQL;
+DECLARE
+  parts TEXT[];
+BEGIN
+    parts := regexp_matches(value, '^([0-9]{1,9})$', '');
+    RETURN parts[1];
+END
+$$ LANGUAGE plpgsql;
 
 -- Convert a semicolon-delimited list of integers into a table of integer voltages.
 CREATE OR REPLACE FUNCTION convert_integer_list(value TEXT) RETURNS TABLE (value INTEGER)
@@ -54,6 +62,15 @@ AS $$
     SELECT convert_integer(v) AS voltage
         FROM regexp_split_to_table(value, ';') AS v
         WHERE convert_integer(v) IS NOT NULL;
+$$ LANGUAGE SQL;
+
+-- Select the highest voltage from a semicolon-delimited list
+CREATE OR REPLACE FUNCTION convert_voltage(value TEXT) RETURNS NUMERIC
+IMMUTABLE
+PARALLEL SAFE
+RETURNS NULL ON NULL INPUT
+AS $$
+  SELECT value FROM convert_integer_list(value) ORDER BY value DESC LIMIT 1;
 $$ LANGUAGE SQL;
 
 -- Convert a text numeric value into a number. Both the period (.) and the comma (,)
@@ -71,21 +88,6 @@ BEGIN
     parts := regexp_matches(value, '^([0-9]+[\.,]?[0-9]*)', '');
     res := replace(parts[1], ',', '.')::NUMERIC;
     RETURN res;
-END
-$$ LANGUAGE plpgsql;
-
--- Convert a text integer value into an integer. 
--- Only supports 9-decimal-digit positive integers
-CREATE OR REPLACE FUNCTION convert_integer(value TEXT) RETURNS INTEGER
-IMMUTABLE
-PARALLEL SAFE
-RETURNS NULL ON NULL INPUT
-AS $$
-DECLARE
-  parts TEXT[];
-BEGIN
-    parts := regexp_matches(value, '^([0-9]{1,9})$', '');
-    RETURN parts[1];
 END
 $$ LANGUAGE plpgsql;
 
