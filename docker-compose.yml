@@ -18,7 +18,7 @@ services:
       - ./schema/dev-init.sql:/docker-entrypoint-initdb.d/90-dev-init.sql
       - ./schema/functions.sql:/docker-entrypoint-initdb.d/91-functions.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U osm -d osm"]
+      test: ["CMD-SHELL", "psql -h 127.0.0.1 -U osm -d osm -c 'SELECT 1' -tA"]
       start_period: 30s
       start_interval: 1s
       interval: 2m
