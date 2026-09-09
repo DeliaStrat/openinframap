@@ -4,7 +4,7 @@ webserver:
 cache: 
   type: file
   basepath: /tmp/tegola
-  max_zoom: 13
+  max_zoom: 15
 
 providers:
   - name: postgis
